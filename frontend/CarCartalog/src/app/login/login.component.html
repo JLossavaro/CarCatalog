@@ -1,0 +1,26 @@
+<div class="login-page" *ngIf="loginRedirect();">
+    <mat-card class="mat-elevation-z12">
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+            <mat-tab label="Entrar">
+
+                <mat-card-content>
+                    <form (ngSubmit)="onSubmit()" [formGroup]="form" autocomplete="off">
+                        <!-- Login-->
+                        <mat-form-field>
+                            <input matInput id="login" placeholder="Login" name="login" formControlName="username">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput id="password" placeholder="Password" name="password" type="password"
+                                formControlName="password">
+                            <mat-icon matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                        <button type="submit" mat-raised-button color="primary" class="login-button">
+                            Entrar
+                        </button>
+                    </form>
+                </mat-card-content>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>

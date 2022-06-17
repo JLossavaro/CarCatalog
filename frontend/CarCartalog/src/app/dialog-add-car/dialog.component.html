@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Add Car Form</h1>
+
+<div matDialogContent>
+
+  <form [formGroup]="carForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input formControlName="Name" matInput placeholder="Nome">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Marca</mat-label>
+      <input formControlName="Brand" matInput placeholder="Brand">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Modelo</mat-label>
+      <input formControlName="Model" matInput placeholder="Model">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ano</mat-label>
+      <input formControlName="Year" matInput placeholder="Year">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Preço</mat-label>
+      <input formControlName="Price" matInput type="Price" class="example-right-align" placeholder="0">
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+
+    <h3>Foto do Carro</h3>
+    <ng-container *ngIf="(isImageSaved || this.editData)">
+      <img [src]="cardImageBase64" style="width: 100%;height:100%;" />
+    </ng-container>
+    <input formControlName="Picture" type="file" id="fileInput" name="fileInput" accept="image/*"
+      (change)="createBase64String($event)" />
+  </form>
+
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" [disabled]="!carForm.valid"
+    (click)="carSubmit()">{{actionButton}}</button>
+</div>

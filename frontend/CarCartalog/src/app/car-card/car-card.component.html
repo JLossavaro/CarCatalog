@@ -1,0 +1,10 @@
+<div class="example-card" *ngIf="carPictureExists();">
+  <mat-card>
+    <img src="{{car.picture}}">
+    <h2>{{car.name}}</h2>
+    <p class="text-context">
+      {{car.year}} * {{car.brand}}
+    </p>
+    <h1>{{car.price | currency}}</h1>
+  </mat-card>
+</div>

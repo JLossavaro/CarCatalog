@@ -1,0 +1,15 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container .filter {
+    width: 100%;
+}
+
+.container .card {
+    justify-content: flex-start;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}

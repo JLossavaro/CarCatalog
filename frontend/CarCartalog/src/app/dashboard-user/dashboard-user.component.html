@@ -1,0 +1,10 @@
+<div class="container">
+    <mat-form-field class="filter" appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput placeholder="Ex. carro" [(ngModel)]="filterString">
+    </mat-form-field>
+    <div class="container card">
+        <app-car-card *ngFor="let car of cars  |filter:filterString" [car]=" car">
+        </app-car-card>
+    </div>
+</div>
